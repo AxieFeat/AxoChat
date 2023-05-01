@@ -1,0 +1,72 @@
+# Команды:
+# /mentionscolor <ЦВЕТ> - установить цвет упоминаний
+# /mentionscolor admin <игрок> <ЦВЕТ> - установить игроку цвет упоминаний
+#
+# Пермишены:
+# AxoChat.MentionsColor - установка цвета упоминаний
+# AxoChat.Admin.MentionsColor - установка игроку цвета упоминаний
+#
+Chats: # Настройка чатов
+  Global-chat: # Любое название
+    Perm: "AxoChat.Global-chat" # С каким пермишеном можно писать в этот чат?
+    Perm-see: "AxoChat.Global-chat" # Пермишен, чтобы видеть сообщения, отправленные в этот чат
+    Perm-error: "&aЧаты &8| &fВы не можете писать в этот чат!"
+    Start-char: '!' # С какого символа должно начинатся сообщение, чтобы написать в этот чат.
+
+    Groups:
+      Default: # Как будет выглядеть чат игроков с пермишеном AxoChat.Default
+        Json: false
+        Format: "&e[G] &f%prefix% %player_name% %suffix% &e>> &6%message%"
+        Range: 0 # Бесконечный радиус
+        Max-length: 45 # Максимальная длина сообщения
+        Max-length-error: "&aЧаты &8| &fВы превысили максимальную длину сообщения!"
+      Vip:
+        Json: false # Если сообщение в формате Json ставьте true!
+        Format: "&6[G] &f%prefix% %player_name% %suffix% &6>> &6%message%"
+        Range: 0
+        Max-length: -1 # Бесконечность
+        Max-length-error: "&aЧаты &8| &fВы превысили максимальную длину сообщения!"
+
+  Local-chat:
+    Perm: "AxoChat.Local-chat" # С каким пермишеном можно писать в этот чат?
+    Perm-see: "AxoChat.Local-chat" # Пермишен, чтобы видеть сообщения, отправленные в этот чат
+    Perm-error: "&aЧаты &8| &fВы не можете писать в этот чат!"
+    Start-char: '' # С какого символа должно начинатся сообщение, чтобы написать в этот чат.
+
+    Groups:
+      Default: # Как будет выглядеть чат игроков с пермишеном AxoChat.Default
+        Json: false
+        Format: "&e[L] &f%prefix% %player_name% %suffix% &e>> &6%message%"
+        Range: 50
+        Max-length: 45 # Максимальная длина сообщения
+        Max-length-error: "&aЧаты &8| &fВы превысили максимальную длину сообщения!"
+      Vip:
+        Json: false # Если сообщение в формате Json ставьте true!
+        Format: "&6[L] &f%prefix% %player_name% %suffix% &6>> &6%message%"
+        Range: 100
+        Max-length: -1 # Бесконечность
+        Max-length-error: "&aЧаты &8| &fВы превысили максимальную длину сообщения!"
+
+
+Mentions: # Настройка упоминаний
+  Enabled: true
+  Pattern: "([a-zA-Z0-9_]+)" # Выражения для поиска упоминаний
+  Colors: # Настройка цветов для упоминаний
+    Default: "&e" # Цвет по умолчанию
+    Red: "&4" # Название: "Цвет"   Используется для табкомплитера команды /mentionscolor <цвет>
+  Actions:
+    - "[MESSAGE] &aЧаты &8| &fВас упомянул &a%player%&f!"
+    - "[SOUND] ENTITY_EXPERIENCE_ORB_PICKUP"
+    - "[TITLE] &aУпоминание!\n&fВас упомянул &a%player%&f!"
+
+
+Messages:
+  Not-Player: "&aЧаты &8| &fВы не игрок!"
+  Not-Found: "&aЧаты &8| &fКоманда не найдена!"
+  Perm-Error: "&aЧаты &8| &fНедостаточно прав!"
+  Color-Error: "&aЧаты &8| &fЦвет не найден!"
+  Mentions-Disabled: "&aЧаты &8| &fСистема упоминаний отключена!"
+  Player-Error: "&aЧаты &8| &fИгрок не найден!"
+
+  Success: "&aЧаты &8| &fВы установили цвет упоминаний на %color_name%&f!"
+  Success-Other: "&aЧаты &8| &fВы установили цвет упоминаний на %color_name%&f для &a%player%&f!"

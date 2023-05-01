@@ -1,0 +1,10 @@
+name: AxoChat
+version: '${version}'
+main: ru.axiefeat.Main
+api-version: 1.18
+authors: [ AxieFeat ]
+description: ChatManager plugin for Paper 1.18.2
+website: https://vk.com/pingisjoin
+
+commands:
+  mentionscolor:
