@@ -58,6 +58,7 @@ public class DataManager {
     private void registerEvents() {
         PluginManager pluginManager = plugin.getServer().getPluginManager();
         pluginManager.registerEvents(new ChatEvent(), plugin);
+        pluginManager.registerEvents(new JoinEvent(), plugin);
     }
 
     private void setupCommands() {
